@@ -6,9 +6,11 @@ library(ggplot2)
 # Using a df with column titles uas (TNT and impTNT), taste (s, f, h, o), per and se
 # set taste as factor if not already, and set levels 
 
-# colnames(bar2) <- c("uas", "taste", "per", "se")
+colnames(bar2) <- c("uas", "taste", "per", "se")
+bar2$taste <- factor(bar2$taste, levels = unique(bar2$taste))
 # bar2$taste <- factor(bar2$taste, levels = c("Sucrose", "HxA"))
-bar2$taste <- factor(bar2$taste, levels = c("Valeric", "OcA", "Oleic"))
+# bar2$taste <- factor(bar2$taste, levels = c("Sucrose100", "HxA"))
+# bar2$taste <- factor(bar2$taste, levels = c("PeA", "OcA", "Oleic"))
 
 ggplot(bar2, aes(x=taste, y=per, fill=uas)) +
   theme(panel.background = element_blank(),
@@ -24,7 +26,7 @@ ggplot(bar2, aes(x=taste, y=per, fill=uas)) +
         legend.text = element_text(size=30, face="bold")) +
   geom_errorbar(aes(ymin=per-se, ymax=per+se), width =.4, size=1.5, position=position_dodge(width = 0.91)) +
   geom_bar(position=position_dodge(width=0.91), width = .85 , stat="identity") +
-coord_cartesian(ylim = c(-0, 70)) +
+coord_cartesian(ylim = c(-0, 75)) +
 labs(x=NULL, y="PER (%)") +
 scale_fill_manual(values=c("darkgrey", "steelblue")) 
 
