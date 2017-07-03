@@ -28,3 +28,15 @@ wilcox.test(x,y)
  data$groups <- factor(data$groups, levels = unique(data$groups))
  
  posthoc.kruskal.dunn.test(x=data, g=groups, p.adjust.method="bonferroni") #needs to be in 'melted' form and data must be factors
+ 
+ #Fisher's Exact Test
+ #cbind() groups first
+ 
+ fisher.test()
+ 
+ #Bonferroni Correction
+ 
+ p.adjust(p, method = "bonferroni", n = length(p))
+ 
+ p.adjust(tt$p.value, method = "bonferroni", n = 6)
+ 
