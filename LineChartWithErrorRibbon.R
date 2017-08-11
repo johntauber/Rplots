@@ -15,8 +15,8 @@ ggplot(df, aes(x=time_labels, y=response)) +
         axis.ticks.length = unit(0.3, "cm"),
         axis.line.y = element_line(color = "white", size=2)) +
 
-  geom_line(color="darkgreen", size=2.2) +
-  geom_ribbon(aes(ymax = avg + std_err, ymin = avg - std_err), fill = "darkgreen", alpha = 0.2) +
+  geom_line(color="darkblue", size=2.2) +
+  geom_ribbon(aes(ymax = response + std_err, ymin = response - std_err), fill = "darkblue", alpha = 0.2) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   coord_cartesian(ylim = c(-10, 80)) 
