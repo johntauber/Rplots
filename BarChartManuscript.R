@@ -22,7 +22,7 @@ ggplot(df, aes(x = factors, y = response)) +
   geom_errorbar(limits, width = .3, size=2, color="black") +
   geom_bar(stat="identity", width = 0.7, fill="black") + 
   scale_x_discrete() +
-  labs(x=NULL, y=expression(paste("Peak ",Delta,"F/F")))
+  labs(x=NULL, y=expression(paste("Peak ",Delta,"F/F (%)")))
 
 
 #For 3 groups Export to PNG with width = 1000, height = 700
